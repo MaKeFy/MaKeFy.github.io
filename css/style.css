@@ -1,0 +1,232 @@
+/* Reset básico para eliminar márgenes por defecto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0; /* Fondo general de la ventana */
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Contenedor principal tipo hoja A4 */
+.resume-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px; /* Ancho estándar web */
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    min-height: 1100px;
+}
+
+/* --- COLUMNA IZQUIERDA (SIDEBAR) --- */
+.left-column {
+    width: 35%;
+    background-color: #5c5c5c; /* Gris oscuro de la imagen */
+    color: #e0e0e0;
+    padding: 30px;
+    text-align: left;
+}
+
+/* Imagen de perfil */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #707070; /* Borde gris ligeramente más claro */
+}
+
+/* Información de contacto */
+.contact-section {
+    margin-bottom: 40px;
+    font-size: 0.9em;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    margin-right: 15px;
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+/* Títulos de la barra lateral con la línea gruesa decorativa */
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3); /* Línea fina */
+    position: relative;
+}
+
+/* El bloque grueso encima de la línea fina */
+.sidebar-title::before {
+    content: '';
+    position: absolute;
+    top: -3px; /* Ajuste para superponer al borde */
+    left: 0;
+    width: 25px;
+    height: 5px;
+    background-color: #fff;
+}
+
+.sidebar-section ul {
+    list-style: none;
+    font-size: 0.9em;
+}
+
+.sidebar-section ul li {
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Bullet points personalizados para el sidebar */
+.sidebar-section ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #a0a0a0;
+}
+
+
+/* --- COLUMNA DERECHA (CONTENIDO PRINCIPAL) --- */
+.right-column {
+    width: 65%;
+    padding: 50px 40px;
+    background-color: white;
+}
+
+/* Encabezado Nombre */
+header h1 {
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #222;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+}
+
+/* Secciones principales */
+.main-section {
+    margin-bottom: 40px;
+}
+
+.main-section p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Títulos de sección principal con la línea decorativa */
+.section-title {
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc; /* Línea fina gris */
+    position: relative;
+}
+
+/* El bloque grueso negro encima de la línea fina */
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 25px;
+    height: 5px;
+    background-color: #333;
+}
+
+/* Estilos Historial Laboral */
+.job-block {
+    margin-bottom: 25px;
+}
+
+.job-date {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.job-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.job-list {
+    margin-left: 20px;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.job-list li {
+    margin-bottom: 4px;
+}
+
+.key-achievement {
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 5px !important;
+}
+
+/* Estilos Formación */
+.education-block {
+    margin-bottom: 20px;
+}
+
+.edu-year {
+    font-weight: 700;
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+/* Media Query para móviles: pone una columna debajo de otra */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column;
+        margin: 0;
+    }
+    .left-column, .right-column {
+        width: 100%;
+        padding: 20px;
+    }
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+}
